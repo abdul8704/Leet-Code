@@ -45,4 +45,21 @@ class Solution {
         }
         return res;
     }
+    public int maximumValue2(String[] strs) {       //different approach
+        int res = -1;
+        for(String str: strs){
+            int val = 0;
+            for(int i=0; i<str.length(); i++){
+                if(!Character.isLetter(str.charAt(i))){
+                    val = (val * 10) + (str.charAt(i) - '0');
+                }
+                else{
+                    val = str.length();
+                    break;
+                }
+            }
+            res = Math.max(res, val);
+        }
+        return res;
+    }
 }
