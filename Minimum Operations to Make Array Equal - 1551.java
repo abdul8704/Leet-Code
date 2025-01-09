@@ -31,7 +31,7 @@ class Solution {
     }
 }
 
-class Solution {
+class Solution1 {
     public int minOperations(int n) {
         int mid =  (n*n) / n ;
         int count = 0 ;
