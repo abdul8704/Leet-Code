@@ -30,6 +30,8 @@
 // 2 <= m == grid[i].length <= 50
 // 1 <= grid[i][j] <= 2500
 
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
     public List<Integer> zigzagTraversal(int[][] grid) {
