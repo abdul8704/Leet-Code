@@ -25,6 +25,10 @@
 // 1 <= s.length, p.length <= 3 * 104
 // s and p consist of lowercase English letters.
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 class Solution {
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> res = new ArrayList<>();
