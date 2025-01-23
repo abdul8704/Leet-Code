@@ -17,6 +17,9 @@
 // 0 <= nums.length <= 105
 // -109 <= nums[i] <= 109
 
+import java.util.HashSet;
+import java.util.Set;
+
 class Solution {
     public int longestConsecutive(int[] arr) {
         Set <Integer> hash = new HashSet<>();
