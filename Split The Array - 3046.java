@@ -25,6 +25,8 @@
 // nums.length % 2 == 0 
 // 1 <= nums[i] <= 100
 
+import java.util.HashMap;
+
 class Solution {
     public boolean isPossibleToSplit(int[] nums) {
         HashMap<Integer, Integer> hash = new HashMap<>();       //use a hashmap to keep count of occurence of each element
