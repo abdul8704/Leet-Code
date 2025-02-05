@@ -38,6 +38,9 @@
 // If all integer numbers from the stream are in the range [0, 100], how would you optimize your solution?
 // If 99% of all integer numbers from the stream are in the range [0, 100], how would you optimize your solution?
 
+import java.util.Collections;
+import java.util.PriorityQueue;
+
 class MedianFinder {
     PriorityQueue<Integer> minHeap = new PriorityQueue<>();
     PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
