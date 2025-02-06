@@ -38,3 +38,29 @@ class Solution {
 
     }
 }
+
+class OptimisedSolution {
+    public int trap(int[] height) {
+        int water = 0;
+        int N = height.length;
+
+        int leftPtr = 0, rightPtr = N-1;        // 
+        int leftMax = 0, rightMax = 0;
+
+        while(leftPtr < rightPtr){
+            leftMax = Math.max(leftMax, height[leftPtr]);
+            rightMax = Math.max(rightMax, height[rightPtr]);
+
+            if(leftMax < rightMax){                 //not bothered about how tall the your right tower is.
+                water += leftMax - height[leftPtr];     // water stags only from your tower TILL the tower just taller than you.
+                leftPtr++;                          //move pointer
+            }
+            else{
+                water += rightMax - height[rightPtr];
+                rightPtr--;
+            }
+        }
+
+        return water;
+    }
+}
