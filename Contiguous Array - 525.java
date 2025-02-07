@@ -19,6 +19,9 @@
 // 1 <= nums.length <= 105
 // nums[i] is either 0 or 1.
 
+import java.util.HashMap;
+import java.util.Map;
+
 class Solution {
     public int findMaxLength(int[] nums) {
         Map<Integer, Integer> hash = new HashMap<>();
