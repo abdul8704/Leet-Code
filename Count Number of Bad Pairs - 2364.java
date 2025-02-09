@@ -26,6 +26,7 @@
 // 1 <= nums.length <= 105
 // 1 <= nums[i] <= 109
 
+import java.util.HashMap;
 
 class Solution {
     public long countBadPairs(int[] nums) {
@@ -45,6 +46,26 @@ class Solution {
             else{
                 hash.put(diff, 1);
             }
+        }        
+
+        return totalPairs - goodPairs;
+    }
+}
+
+class OptimisedSolution {
+    public long countBadPairs(int[] nums) {
+        long N = nums.length;
+        long totalPairs = (N * (N-1)) / 2;
+        long goodPairs = 0;
+
+        HashMap<Long, Integer> hash = new HashMap<>();
+
+        for(int i=0; i<N; i++){
+            long diff = nums[i] - i;
+            int freq = hash.getOrDefault(diff, 0);
+
+            goodPairs += freq;
+            hash.put(diff, freq + 1);
         }        
 
         return totalPairs - goodPairs;
