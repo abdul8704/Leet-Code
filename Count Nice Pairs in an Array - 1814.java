@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 class Solution {
     private static int rev(int n){
         int rev = 0;
