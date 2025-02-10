@@ -11,7 +11,6 @@ class Solution {
     }
     public int countNicePairs(int[] nums) {
         int N = nums.length;
-        int totalPairs = (N*(N-1)) / 2;
         int nicePairs = 0;
 
         HashMap<Integer, Integer> hash = new HashMap<>();
