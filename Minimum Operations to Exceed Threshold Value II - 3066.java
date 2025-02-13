@@ -37,6 +37,7 @@
 // 1 <= nums[i] <= 109
 // 1 <= k <= 109
 // The input is generated such that an answer always exists. That is, there exists some sequence of operations after which all elements of the array are greater than or equal to k.
+import java.util.PriorityQueue;
 
 class Solution {
     public int minOperations(int[] nums, int k) {
