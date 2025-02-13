@@ -20,6 +20,8 @@
 // 1 <= nums.length <= 105
 // 1 <= nums[i] <= 109
 
+import java.util.HashMap;
+
 class Solution {
     public int maximumSum(int[] nums) {
         int[] map = new int[82];    // as per constraints, largest sum of digits will be sumOfDigits(10^9 - 1) = 81.
