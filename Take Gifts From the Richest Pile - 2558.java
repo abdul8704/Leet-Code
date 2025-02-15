@@ -34,6 +34,9 @@
 // 1 <= gifts[i] <= 109
 // 1 <= k <= 103
 
+import java.util.Collections;
+import java.util.PriorityQueue;
+
 class Solution {
     public long pickGifts(int[] gifts, int k){
 
@@ -78,5 +81,46 @@ class Solution {
             }
         }
         return ans;
+    }
+}
+
+class OptimisedSolution {   //use maxHeap
+    public long pickGifts(int[] nums, int k) {
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        for(int num: nums){
+            maxHeap.offer(num);
+        }
+
+        for(int i=0; i<k; i++){
+            int max = maxHeap.poll();
+            maxHeap.offer((int) Math.floor(Math.sqrt(max)));
+        }
+        long res = 0;
+        while(!maxHeap.isEmpty()){
+            res += maxHeap.poll();      //find sum
+        }
+
+        return res;
+    }
+}
+
+class MoreOptimisedSolution { 
+    public long pickGifts(int[] nums, int k) {
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder()); 
+        long total = 0;
+
+        for(int num: nums){
+            maxHeap.offer(num);
+            total += num;       // compute total sum
+        }
+
+        for(int i=0; i<k; i++){
+            int max = maxHeap.poll();
+            int reduced = (int) Math.sqrt(max);
+            total -= (max - reduced);   //reduce total by how much the value decreases. we skip the need for a O(n) loop
+            maxHeap.offer(reduced);
+        }
+
+        return total;
     }
 }
