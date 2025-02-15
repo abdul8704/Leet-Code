@@ -120,7 +120,6 @@ class MoreOptimisedSolution {
             total -= (max - reduced);   //reduce total by how much the value decreases. we skip the need for a O(n) loop
             maxHeap.offer(reduced);
         }
-
         return total;
     }
 }
