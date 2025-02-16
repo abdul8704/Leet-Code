@@ -43,6 +43,8 @@
 // 0 <= nums[i] < n
 // The input is generated such that nums contains exactly two repeated elements.
 
+import java.util.HashMap;
+
 class Solution {
     public int[] getSneakyNumbers(int[] nums) {
         HashMap<Integer, Integer> hash = new HashMap<>();
