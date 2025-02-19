@@ -15,6 +15,7 @@ Example 2:
      
 '''
 
+
 class Solution:
     def rotate(self, matrix: list[list[int]]) -> None:
         """
