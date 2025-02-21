@@ -24,6 +24,9 @@
 // nums[i] is either '0' or '1'.
 // All the strings of nums are unique.
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 class Solution {
     public String findDifferentBinaryString(String[] nums) {
         HashSet<String> set = new HashSet(Arrays.asList(nums)); 
