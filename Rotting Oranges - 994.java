@@ -33,6 +33,65 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
+
+class OptimalSolution {
+    private static int[][] offset = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
+
+    private static boolean isSafe(int i, int j, int R, int C){
+        return(i >= 0 && i < R && j >=0 && j < C);
+    }
+
+    public int orangesRotting(int[][] grid) {
+        Queue<Index> rottenPos = new LinkedList<>();
+        int R = grid.length, C = grid[0].length;
+        int rottenCount = 0, totalCount = 0;
+
+        for(int row=0; row < R; row++){
+            for(int col=0; col < C; col++){
+                if(grid[row][col] != 0){
+                    totalCount++;
+                }
+                if(grid[row][col] == 2){
+                    rottenCount++;
+                    rottenPos.offer(new Index(row, col));
+                }
+            }
+        }
+        if(totalCount == 0) return 0;
+        
+        int minute = -1;
+
+        while(!rottenPos.isEmpty()){
+            minute++;
+            int len = rottenPos.size();
+            for(int i=0; i<len; i++){
+                Index pos = rottenPos.poll();
+   
+                for(int off = 0; off < offset.length; off++){
+                    int newR = pos.row + offset[off][0];
+                    int newC = pos.col + offset[off][1];
+
+                    if(isSafe(newR, newC, R, C) && grid[newR][newC] == 1){
+                        grid[newR][newC] = 2;
+                        rottenCount++;
+                        rottenPos.offer(new Index(newR, newC));
+                    }
+                }
+            }
+        }
+
+        return (rottenCount == totalCount)? minute: -1;
+    }
+}
+class Index{
+    int row;
+    int col;
+    Index(int i, int j){
+        this.row = i;
+        this.col = j;
+    }
+}
+
 class Solution {
     private boolean boundaryCheck(int x,int y, int R, int C){
         return (x >= 0 && x < R && y >= 0 && y < C);

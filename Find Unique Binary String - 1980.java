@@ -28,6 +28,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 class Solution {
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public String findDifferentBinaryString(String[] nums) {
         HashSet<String> set = new HashSet(Arrays.asList(nums)); 
         int N = nums[0].length();
