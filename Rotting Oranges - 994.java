@@ -34,6 +34,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 
+
 class OptimalSolution {
     private static int[][] offset = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
 
