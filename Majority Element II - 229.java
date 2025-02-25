@@ -19,6 +19,9 @@
  
 // Follow up: Could you solve the problem in linear time and in O(1) space?
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Solution {
     public List<Integer> majorityElement(int[] nums) {
         List<Integer> res = new ArrayList<>();
