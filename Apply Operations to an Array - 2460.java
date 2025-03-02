@@ -56,7 +56,7 @@ class Solution {
     }
 }
 
-class Solution {
+class OptimalSolution {
     public int[] applyOperations(int[] nums) {      // time -> O(2N) space -> O(1)
         for(int i=0; i<nums.length-1; i++){
             if(nums[i] == nums[i+1]){
