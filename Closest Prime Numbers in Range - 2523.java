@@ -62,7 +62,7 @@ class Solution {
     }
 }
 
-class Solution {
+class Solution2 {
     public int[] closestPrimes(int left, int right) {
         int a = -1, b = -1, one = -1, two = -1;
         int i=left, len = Integer.MAX_VALUE;
