@@ -55,7 +55,7 @@ class Solution {
     }
 }
 
-class Solution {
+class Solution1 {
     int carry = 0;
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -74,4 +74,12 @@ class Solution {
         ListNode res = new ListNode(sum % 10, addTwoNumbers(l1, l2));
         return res;
     }
+}
+
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
