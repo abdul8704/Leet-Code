@@ -5,6 +5,7 @@
 // Note that the rectangles do not overlap. Your task is to determine if it is possible to make either two horizontal or two vertical cuts on the grid such that:
 // Each of the three resulting sections formed by the cuts contains at least one rectangle.
 // Every rectangle belongs to exactly one section.
+
 // Return true if such cuts can be made; otherwise, return false.
 
 // Example 1:
