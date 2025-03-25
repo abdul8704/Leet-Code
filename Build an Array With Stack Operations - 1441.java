@@ -47,6 +47,9 @@
 // 1 <= target[i] <= n
 // target is strictly increasing.
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Solution {
     public List<String> buildArray(int[] target, int n) {
         List<String> stack = new ArrayList<>();
