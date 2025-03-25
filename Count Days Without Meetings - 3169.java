@@ -26,10 +26,12 @@
 // meetings[i].length == 2
 // 1 <= meetings[i][0] <= meetings[i][1] <= days
 
+import java.util.Arrays;
+import java.util.LinkedList;
+
 class Solution {
     public int countDays(int days, int[][] meetings) {
         Arrays.sort(meetings, (a, b) -> (a[0] == b[0]) ? Integer.compare(a[1], b[1]): Integer.compare(a[0], b[0]));
-        int free = 0;
         LinkedList<int[]> meet = new LinkedList<>();
         meet.add(meetings[0]);
 
