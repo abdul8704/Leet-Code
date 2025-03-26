@@ -28,6 +28,9 @@
 // All the values of nums are unique.
 // nums is sorted in ascending order.
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Solution {
     public List<String> summaryRanges(int[] nums) {
         List<String> res = new ArrayList<>();
