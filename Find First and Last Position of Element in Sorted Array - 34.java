@@ -27,6 +27,39 @@
 
 class Solution {
     public int[] searchRange(int[] nums, int target) {
+        int N = nums.length;
+        int res[] = new int[2];
+
+        res[0] = binarySearch(nums, N, target, true);
+        res[1] = binarySearch(nums, N, target, false);
+
+        return res;
+
+    }
+    private static int binarySearch(int[] nums, int N, int target, boolean lower){
+        int left = 0, right = N-1;
+        int op = -1;
+
+        while(left <= right){
+            int mid = (right + left) / 2;
+
+            if(nums[mid] == target){
+                op = mid;
+                if(lower) right = mid - 1;
+                else left = mid + 1;
+            }
+            else if(nums[mid] < target)
+                left = mid + 1;
+            else
+                right = mid - 1;    
+        }
+
+        return op;
+    }
+}
+
+class Solution2 {
+    public int[] searchRange(int[] nums, int target) {
         int left = 0, right = nums.length - 1, mid = 0;
         int res[] = {-1, -1};
         
