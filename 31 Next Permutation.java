@@ -29,6 +29,8 @@
 // 1 <= nums.length <= 100
 // 0 <= nums[i] <= 100
 
+import java.util.Arrays;
+
 class Solution {
     void nextPermutation(int[] arr) {
         int idx = -1, i = 0, j = 0;   //STEP 1: Find the break point
