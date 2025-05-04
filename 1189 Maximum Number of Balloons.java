@@ -21,6 +21,7 @@
 // Input: text = "leetcode"
 // Output: 0
 
+import java.util.HashMap;
 
 class Solution {
     public int maxNumberOfBalloons(String text) {
@@ -40,7 +41,7 @@ class Solution {
     }
 }
 
-class Solution {        //constant space complexity code ->
+class Solution2 {        //constant space complexity code ->
     public int maxNumberOfBalloons(String text) {
         int map[] = new int[26];
         for(int i =0;i<text.length(); i++){
