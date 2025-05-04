@@ -66,7 +66,7 @@ class Solution {
     }
 }
 
-class OptimisedSolution {
+class OptimisedSolution{
     public int splitArray(int[] nums, int k) {
         int largest = nums[0], totalSum = nums[0], N = nums.length;
 
