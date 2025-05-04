@@ -34,7 +34,7 @@
 
 import java.util.Stack;
 
-public class Minimum_Add_to_Make_Parentheses_Valid {
+class Minimum_Add_to_Make_Parentheses_Valid {
     public int minAddToMakeValid(String s) {
         
         Stack<Character> stack = new Stack<>();
