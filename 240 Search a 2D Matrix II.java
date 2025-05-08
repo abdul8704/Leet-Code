@@ -35,3 +35,26 @@ class Solution {
         return false;
     }
 }
+
+class Solution2 {
+    public boolean searchMatrix(int[][] mat, int target) {
+        int R = mat.length, C= mat[0].length;
+        
+        for(int i=0; i<R; i++){
+            int left = 0, right = C-1; 
+
+            while(left <= right){
+                int mid = (left + right)/2;
+                
+                if(mat[i][mid] == target)
+                    return true;
+                else if(mat[i][mid] < target)
+                    left = mid + 1;
+                else
+                    right = mid - 1;    
+            }
+                
+        }
+        return false;
+    }
+}
