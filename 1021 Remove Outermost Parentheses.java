@@ -30,6 +30,8 @@
 // s[i] is either '(' or ')'.
 // s is a valid parentheses string.
 
+import java.util.Stack;
+
 class OptimisedSolution {
     public String removeOuterParentheses(String s) {
         int stack = 0;
