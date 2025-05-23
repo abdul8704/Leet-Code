@@ -23,7 +23,7 @@
 
 class Solution {
     public int maxDepth(String s) {
-        int len = 0, max = 0, N = s.length();
+        int len = 0, max = 0;
         for(char ch: s.toCharArray()){
             if(ch == '(')
                 len++;
