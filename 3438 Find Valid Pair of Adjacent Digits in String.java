@@ -46,7 +46,6 @@ class Solution {
                         return new String(res);
                     }
         }
-
         return new String("");
     }
 }
