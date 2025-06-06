@@ -38,7 +38,6 @@ class Solution {
                 sum += (max - leastFrequent(map));
             }
         }
-
         return sum;
     }
 }
