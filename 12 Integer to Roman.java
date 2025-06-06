@@ -44,6 +44,8 @@
 // Constraints:
 // 1 <= num <= 3999
 
+import java.util.HashMap;
+
 class Solution {
     private static StringBuilder convert(HashMap<Integer, Character> map, int num, int multiple) {
         if (num == 0)
