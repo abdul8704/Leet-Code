@@ -52,3 +52,27 @@ class Solution {
     }
 }
 
+class AnotherSolution {
+    public String longestPalindrome(String s) { // finding palindromes at each length from 1 to N;
+        int N = s.length();
+
+        boolean dp[][] = new boolean[N][N];
+
+        for(int i=0; i<N; i++)
+            dp[i][i] = true;
+
+        int maxLen = 1;    
+        int start = 0;
+
+        for(int len = 2; len<=N; len++){
+            for(int idx=0; idx<N; idx++){
+                if(idx+len-1 < N && s.charAt(idx) == s.charAt(idx+len-1) && (len == 2 || dp[idx+1][idx+len-2])){
+                    maxLen = len;
+                    start = idx;
+                    dp[idx][idx+len-1] = true;
+                }
+            }
+        }
+        return s.substring(start, start + maxLen);
+    }
+}
