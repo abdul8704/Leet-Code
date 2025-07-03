@@ -32,11 +32,11 @@
 // Each key in the grid is unique.
 // Each key in the grid has a matching lock.
 
-import java.utils.Set;
-import java.utils.HashSet;
-import java.utils.LinkedList;
-import java.utils.Queue;
-import java.utils.Objects;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Objects;
+import java.util.Queue;
+import java.util.Set;
 
 class Solution {
     private static int[][] dirs = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};

@@ -24,10 +24,10 @@
 // 1 <= m, n <= 3
 // mat[i][j] is either 0 or 1.
 
-import java.utils.Set;
-import java.utils.HashSet;
-import java.utils.LinkedList;
-import java.utils.Queue;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
 
 class Solution {
     private static int dirs[][] = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}, {0, 0}};
