@@ -17,6 +17,9 @@
 // Constraints:
 // 1 <= n <= 18
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Solution {
     public List<String> validStrings(int n) {
         List<String> res = new ArrayList<>();
