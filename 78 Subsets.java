@@ -17,6 +17,26 @@
 import java.util.List;
 import java.util.ArrayList;
 
+class BestSolution {
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> subset = new ArrayList<>();
+        int N = nums.length;
+        int mask = 1 << N;
+
+        for(int bit=0; bit<mask; bit++){
+            ArrayList<Integer> list  = new ArrayList<>();
+            
+            for(int i=0; i<N; i++){
+                if((bit & (1 << i)) == (1 << i))
+                    list.add(nums[i]);
+            }
+
+            subset.add(new ArrayList<>(list));
+        }
+        return subset;
+    }
+}
+
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> subset = new ArrayList<>();
