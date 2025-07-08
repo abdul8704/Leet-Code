@@ -93,7 +93,4 @@ class NaiveSolution {
         }
         return subset;
     }
-    private static void helper(int[] nums, int idx, List<Integer> list, List<List<Integer>> subset){
-        
-    }
 }
