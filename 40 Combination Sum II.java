@@ -27,7 +27,7 @@
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
+import java.util.Arrays; 
 
 class Solution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
@@ -55,7 +55,7 @@ class Solution {
                 break;    
 
             list.add(arr[i]);
-            helper(arr, target, i+1, sum + arr[i], new ArrayList(list), res);    
+            helper(arr, target, i+1, sum + arr[i], new ArrayList<>(list), res);    
             list.remove(list.size() - 1);
         }
 
