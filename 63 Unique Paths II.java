@@ -51,3 +51,32 @@ class Solution {
         return dp[R-1][C-1];
     }
 }
+
+class Solution2 {
+    public int uniquePathsWithObstacles(int[][] grid) {
+        if(grid[0][0] == 1)
+            return 0;
+
+        int R = grid.length;
+        int C = grid[0].length;
+
+        int[][] dp = new int[R][C];
+
+        dp[0][0] = 1;
+
+        for(int i=0; i<R; i++){
+            for(int j=0; j<C; j++){
+                if(grid[i][j] == 1 || (i == 0 && j == 0))
+                    continue;
+                if(i == 0)
+                    dp[i][j] = dp[i][j-1];
+                else if(j == 0) 
+                    dp[i][j] = dp[i-1][j];
+                else
+                    dp[i][j] = dp[i-1][j] + dp[i][j-1];
+            }
+        }
+
+        return dp[R-1][C-1];
+    }
+}
