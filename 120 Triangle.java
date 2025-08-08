@@ -23,7 +23,7 @@
  
 // Follow up: Could you do this using only O(n) extra space, where n is the total number of rows in the triangle?
 
-class Solution {
+class Solution { // O(N^2) space
     public int minimumTotal(List<List<Integer>> triangle) {
         int N = triangle.size();
 
@@ -52,5 +52,22 @@ class Solution {
             res = Math.min(res, num);
 
         return res;    
+    }
+}
+
+class OptimisedSolution { // O(N) space
+    public int minimumTotal(List<List<Integer>> tri) {
+        int N = tri.size();
+
+        Integer[] dp = new Integer[N];
+
+        for(int i=0; i<N; i++)
+            dp[i] = tri.get(N-1).get(i);
+
+        for(int row=N-2; row>=0; row--)
+            for(int col=0; col<row+1; col++)
+                dp[col] = tri.get(row).get(col) + Math.min(dp[col], dp[col+1]);
+
+        return dp[0];
     }
 }
