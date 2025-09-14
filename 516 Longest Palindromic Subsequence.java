@@ -15,7 +15,7 @@
 // 1 <= s.length <= 1000
 // s consists only of lowercase English letters.
 
-class Solution {
+class Solution { 
     public int longestPalindromeSubseq(String s) {
         char[] s1 = s.toCharArray();
         char[] s2 = new StringBuilder(s).reverse().toString().toCharArray();
@@ -32,6 +32,22 @@ class Solution {
                     dp[i+1][j+1] = Math.max(dp[i][j+1], dp[i+1][j]);
             }
         }
+
+        StringBuilder sb = new StringBuilder(); // to print the longest palindromic subsequence
+        int i = N, j = N;
+
+        while (i > 0 && j >0){
+            if(s1[i-1] == s2[j-1]){
+                sb.append(s1[i-1]);
+                i--; j--;
+            }
+            else if(dp[i][j] == dp[i-1][j])
+                i--;
+            else
+                j--;
+        }
+
+        System.out.println(sb.reverse());
 
         return dp[N][N];
     }
