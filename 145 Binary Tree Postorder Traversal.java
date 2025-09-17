@@ -55,24 +55,72 @@ class Solution {
     }
 }
 
-class Solution2 {
-    public List<Integer> inorderTraversal(TreeNode root) {
+class Solution {
+    public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
+
+        if(root == null)
+            return list;
+
+        Stack<TreeNode> stack = new Stack<>();
+        Stack<TreeNode> anotherStack = new Stack<>();
+
+        stack.push(root);
+
+        while(!stack.isEmpty()){
+            TreeNode node = stack.pop(); // take  a node, 
+
+            anotherStack.push(node);  // push it to stack, becaUSE the reverse iteration of this is post order
+
+            if(node.left != null)
+                stack.push(node.left);
+
+            if(node.right != null)
+                stack.push(node.right);
+        }
+
+        while(!anotherStack.isEmpty())
+            list.add(anotherStack.pop().val);
+
+        return list;
+    }
+}
+
+class Solution {
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+
+        if(root == null)
+            return list;
+
         Stack<TreeNode> stack = new Stack<>();
 
         TreeNode curr = root;
 
         while(curr != null || !stack.isEmpty()){
-            while(curr != null){
+            if(curr != null){
                 stack.push(curr);
                 curr = curr.left;
             }
+            else{
+                TreeNode temp = stack.peek(); 
 
-            curr = stack.pop();
-                list.add(curr.val);
+                if(temp.right != null)
+                    curr = temp.right;
+                else{
+                    temp = stack.peek();
+                    stack.pop();
+                    list.add(temp.val);
 
-            curr = curr.right;
+                    while(!stack.isEmpty() && temp == stack.peek().right){
+                        temp = stack.peek();
+                        stack.pop();
+                        list.add(temp.val);
+                    }
+                }
+            }
         }
+
 
         return list;
     }
