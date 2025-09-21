@@ -54,7 +54,7 @@ class Solution {
         local = Math.max(local, node.val);
 
         max = Math.max(max, l_path + r_path + node.val);  // assuming this is the final tree, and taking this root as turning point
-        max = Math.max(local, max); // max of both
+        max = Math.max(local, max);                      // max of both
 
         return local;
     }

@@ -65,7 +65,7 @@ class Solution {
     }
 }
 
-class Solution {
+class Solution2 {
     private static int max;
 
     public int diameterOfBinaryTree(TreeNode root) {
